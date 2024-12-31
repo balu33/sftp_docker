@@ -1,0 +1,13 @@
+version: '3.3'
+services:
+  sftp1:
+    image: atmoz/sftp
+    container_name: sftp_server
+    ports:
+      - "2222:22"
+    volumes:
+      - "./data1:/home"
+        #- /home/balaji.devanaboina@npci.org.in/fed/sftp_docker/users.conf:/etc/sftp/users.conf:rw
+    restart: unless-stopped
+    env_file:
+      - environment
